@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Python Programming",
+    "description": "Learn Python from basics to advanced with hands-on projects and real-world applications",
+    "category": "Python",
+    "type": "recorded",
+    "duration": "40 hours",
+    "rating": 4.8,
+    "price": 2999,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 2,
+    "title": "AI & Machine Learning Masterclass",
+    "description": "Master AI and ML concepts with real-world applications and industry projects",
+    "category": "AI/ML",
+    "type": "live",
+    "duration": "60 hours",
+    "rating": 4.9,
+    "price": 4999,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 3,
+    "title": "Java Full Stack Development",
+    "description": "Complete Java development from backend to frontend with Spring Boot and React",
+    "category": "Java",
+    "type": "recorded",
+    "duration": "50 hours",
+    "rating": 4.7,
+    "price": 3999,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 4,
+    "title": "Modern Web Development",
+    "description": "Build responsive websites with HTML, CSS, JavaScript & React from scratch",
+    "category": "Web Development",
+    "type": "all",
+    "duration": "45 hours",
+    "rating": 4.6,
+    "price": 0,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 5,
+    "title": "Advanced Python for Data Science",
+    "description": "Use Python for data analysis, visualization, and machine learning with pandas and numpy",
+    "category": "Python",
+    "type": "live",
+    "duration": "35 hours",
+    "rating": 4.8,
+    "price": 3499,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 6,
+    "title": "React.js Complete Guide",
+    "description": "Master React.js with hooks, context, and modern patterns for building scalable apps",
+    "category": "Web Development",
+    "type": "recorded",
+    "duration": "30 hours",
+    "rating": 4.9,
+    "price": 2499,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 7,
+    "title": "Deep Learning with TensorFlow",
+    "description": "Build neural networks and deep learning models for computer vision and NLP",
+    "category": "AI/ML",
+    "type": "recorded",
+    "duration": "55 hours",
+    "rating": 4.7,
+    "price": 4499,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 8,
+    "title": "Spring Boot Microservices",
+    "description": "Build scalable microservices with Spring Boot, Docker, and cloud deployment",
+    "category": "Java",
+    "type": "all",
+    "duration": "40 hours",
+    "rating": 4.6,
+    "price": 0,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 9,
+    "title": "Python Web Development with Django",
+    "description": "Create powerful web applications using Django framework with database integration",
+    "category": "Python",
+    "type": "recorded",
+    "duration": "38 hours",
+    "rating": 4.5,
+    "price": 2799,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 10,
+    "title": "Machine Learning Algorithms",
+    "description": "Understand and implement various ML algorithms from scratch with practical examples",
+    "category": "AI/ML",
+    "type": "live",
+    "duration": "48 hours",
+    "rating": 4.8,
+    "price": 3999,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 11,
+    "title": "Advanced Java Programming",
+    "description": "Master advanced Java concepts including multithreading, collections, and design patterns",
+    "category": "Java",
+    "type": "recorded",
+    "duration": "42 hours",
+    "rating": 4.7,
+    "price": 3299,
+    "image": "/api/placeholder/300/200"
+  },
+  {
+    "id": 12,
+    "title": "Full Stack JavaScript Development",
+    "description": "Build complete web applications using Node.js, Express, MongoDB, and React",
+    "category": "Web Development",
+    "type": "live",
+    "duration": "55 hours",
+    "rating": 4.8,
+    "price": 4299,
+    "image": "/api/placeholder/300/200"
+  }
+]
