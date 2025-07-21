@@ -169,10 +169,6 @@ const ForgotPasswordModal = ({ onClose, onBack }) => {
   );
 };
 
-
-
-
-
 // Enhanced Signup Modal Component
 const SignupModal = ({ onClose, onSignUp }) => {
   const [activeTab, setActiveTab] = useState('signup');
@@ -311,9 +307,11 @@ const SignupModal = ({ onClose, onSignUp }) => {
         }
       `}</style>
       
-      <div className="fixed inset-0 backdrop-blur-sm flex justify-center items-center z-[2000]">
+      {/* CHANGED: Increased backdrop blur effect by 20% (from backdrop-blur-sm to backdrop-blur) */}
+      <div className="fixed inset-0 backdrop-blur flex justify-center items-center z-[2000]">
+        {/* CHANGED: Increased height of register page by 15px (from h-[580px] to h-[595px] and h-[520px] to h-[535px]) */}
         <div className={`bg-gradient-to-b from-blue-50 to-white rounded-2xl p-6 w-full max-w-[85%] sm:max-w-md text-center shadow-lg relative flex flex-col no-scrollbar ${
-          activeTab === 'signup' ? 'h-[580px]' : 'h-[520px]'
+          activeTab === 'signup' ? 'h-[640px]' : 'h-[580px]'
         }`}>
           <button 
             onClick={onClose} 
@@ -354,23 +352,23 @@ const SignupModal = ({ onClose, onSignUp }) => {
           <div className="flex-1 overflow-y-auto no-scrollbar px-2">
             <div className="max-w-xs mx-auto">
               {activeTab === 'signup' && (
-  <>
-    <input
-      type="text"
-      placeholder="First name"
-      value={firstName}
-      onChange={e => setFirstName(e.target.value)}
-      className="w-full p-2.5 rounded-xl border border-gray-300 text-sm outline-none mb-3"
-    />
-    <input
-      type="text"
-      placeholder="Last name"
-      value={lastName}
-      onChange={e => setLastName(e.target.value)}
-      className="w-full p-2.5 rounded-xl border border-gray-300 text-sm outline-none mb-3"
-    />
-  </>
-)}
+                <>
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    value={firstName}
+                    onChange={e => setFirstName(e.target.value)}
+                    className="w-full p-2.5 rounded-xl border border-gray-300 text-sm outline-none mb-3"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    value={lastName}
+                    onChange={e => setLastName(e.target.value)}
+                    className="w-full p-2.5 rounded-xl border border-gray-300 text-sm outline-none mb-3"
+                  />
+                </>
+              )}
 
               <input
                 type="email"

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SignupModal from './SignupModal';
 
-
 const Header = ({ userEmail, setUserEmail }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,108 +28,38 @@ const Header = ({ userEmail, setUserEmail }) => {
     setUserEmail(email);
   };
 
-  const styles = {
-    header: {
-      backgroundColor: '#fff',
-      borderBottom: '1px solid #e0e0e0',
-      fontFamily: 'Roboto, sans-serif',
-      position: 'sticky',
-      top: 0,
-      zIndex: 1000,
-      width: '100%',
-    },
-    container: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '12px 24px',
-      flexWrap: 'wrap',
-    },
-    logo: {
-      display: 'flex',
-      alignItems: 'center',
-      fontWeight: 600,
-      fontSize: '24px',
-      color: '#1b3a57',
-    },
-    logoImg: {
-      height: '40px',
-      marginRight: '10px',
-    },
-    nav: {
-      display: isMobile ? (menuOpen ? 'flex' : 'none') : 'flex',
-      flexDirection: isMobile ? 'column' : 'row',
-      gap: '20px',
-      alignItems: isMobile ? 'flex-start' : 'center',
-      fontSize: '16px',
-      fontWeight: 600,
-      marginTop: isMobile ? '10px' : 0,
-      width: isMobile ? '100%' : 'auto',
-    },
-    navItem: {
-      textDecoration: 'none',
-      color: '#1b3a57',
-    },
-    rightSide: {
-      display: 'flex',
-      gap: '10px',
-      alignItems: 'center',
-      marginTop: isMobile ? '10px' : 0,
-    },
-    button: {
-      backgroundColor: '#4a6cf7',
-      color: '#fff',
-      border: 'none',
-      borderRadius: '8px',
-      padding: '8px 16px',
-      cursor: 'pointer',
-      fontSize: '14px',
-      fontWeight: 600,
-    },
-    outlineButton: {
-      backgroundColor: 'transparent',
-      color: '#4a6cf7',
-      border: '2px solid #4a6cf7',
-      borderRadius: '8px',
-      padding: '8px 16px',
-      cursor: 'pointer',
-      fontSize: '14px',
-      fontWeight: 600,
-    },
-    hamburger: {
-      display: isMobile ? 'block' : 'none',
-      fontSize: '24px',
-      background: 'none',
-      border: 'none',
-      cursor: 'pointer',
-      color: '#1b3a57',
-    },
-  };
-
   return (
-    <header style={styles.header}>
-      <div style={styles.container}>
-        <div style={styles.logo}>
-          <img src="/image/mainlogo.png" alt="Logo" style={styles.logoImg} />
-          
+    <header className="bg-white border-b border-gray-300 font-roboto sticky top-0 z-50 w-full">
+      <div className="flex justify-between items-center px-6 py-3 flex-wrap">
+        <div className="flex items-center font-semibold text-2xl text-blue-900">
+          <img src="/image/mainlogo.png" alt="Logo" className="h-10 mr-2.5" />
         </div>
 
-        <button onClick={() => setMenuOpen(!menuOpen)} style={styles.hamburger} aria-label="Toggle Menu">
+        <button 
+          onClick={() => setMenuOpen(!menuOpen)} 
+          className={`${isMobile ? 'block' : 'hidden'} text-2xl bg-transparent border-none cursor-pointer text-blue-900`}
+          aria-label="Toggle Menu"
+        >
           ☰
         </button>
 
-        <nav style={styles.nav}>
-          <Link to="/" style={styles.navItem}>Home</Link>
-          <Link to="/course" style={styles.navItem}>Courses</Link>
-          <Link to="/specializations" style={styles.navItem}>Specializations</Link>
-          <a href="#contact" style={styles.navItem}>Contact Us</a>
-          <Link to="/about" style={styles.navItem}>About Us</Link>
+        <nav className={`${isMobile ? (menuOpen ? 'flex' : 'hidden') : 'flex'} ${isMobile ? 'flex-col items-start mt-2.5 w-full' : 'flex-row items-center'} gap-5 text-base font-semibold`}>
+          <Link to="/" className="no-underline text-blue-900">Home</Link>
+          <Link to="/course" className="no-underline text-blue-900">Courses</Link>
+          <Link to="/specializations" className="no-underline text-blue-900">Specializations</Link>
+          <a href="#contact" className="no-underline text-blue-900">Contact Us</a>
+          <Link to="/about" className="no-underline text-blue-900">About Us</Link>
         </nav>
 
         {!isMobile && (
-          <div style={styles.rightSide}>
-            <button style={styles.outlineButton}>Book a Demo</button>
-            <button style={styles.button} onClick={() => !userEmail && setShowModal(true)}>
+          <div className="flex gap-2.5 items-center">
+            <button className="bg-transparent text-blue-500 border-2 border-blue-500 rounded-lg px-4 py-2 cursor-pointer text-sm font-semibold">
+              Book a Demo
+            </button>
+            <button 
+              className="bg-blue-500 text-white border-none rounded-lg px-4 py-2 cursor-pointer text-sm font-semibold" 
+              onClick={() => !userEmail && setShowModal(true)}
+            >
               {userEmail ? userEmail.substring(0, 5) : 'Signup'}
             </button>
           </div>
@@ -138,9 +67,14 @@ const Header = ({ userEmail, setUserEmail }) => {
       </div>
 
       {isMobile && menuOpen && (
-        <div style={{ ...styles.rightSide, padding: '0 24px 12px' }}>
-          <button style={styles.outlineButton}>Book a Demo</button>
-          <button style={styles.button} onClick={() => !userEmail && setShowModal(true)}>
+        <div className="flex gap-2.5 items-center px-6">
+          <button className="bg-transparent text-blue-500 border-2 border-blue-500 rounded-lg px-4 py-2 cursor-pointer text-sm font-semibold">
+            Book a Demo
+          </button>
+          <button 
+            className="bg-blue-500 text-white border-none rounded-lg px-4 py-2 cursor-pointer text-sm font-semibold" 
+            onClick={() => !userEmail && setShowModal(true)}
+          >
             {userEmail ? userEmail.substring(0, 5) : 'Signup'}
           </button>
         </div>

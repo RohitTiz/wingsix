@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-// FAQ data array
 const faqs = [
   {
     question: 'What is a Payment Gateway?',
@@ -30,121 +29,60 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  // State to keep track of the currently active question index
   const [activeIndex, setActiveIndex] = useState(1);
 
-  // Section wrapper style
-  const sectionStyle = {
-    padding: '60px 20px',
-    maxWidth: '1200px',
-    margin: '0 auto',
-    fontFamily: 'Roboto, sans-serif',
-  };
-
-  // Heading style
-  const titleStyle = {
-    fontSize: '2.2rem',
-    fontWeight: '700',
-    marginBottom: '40px',
-    textAlign: 'center',
-  };
-
-  // FAQ layout container
-  const containerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '24px',
-  };
-
-  // Sidebar container for questions
-  const listStyle = {
-    flex: '1 1 300px',
-    minWidth: '280px',
-    border: '1px solid #eee',
-    borderRadius: '8px',
-    backgroundColor: '#fff',
-  };
-
-  // Style for each question item in the list
-  const listItemStyle = (index) => ({
-    padding: '18px 20px',
-    display: 'flex',
-    alignItems: 'center',
-    borderBottom: index !== faqs.length - 1 ? '1px solid #eee' : 'none',
-    cursor: 'pointer',
-    backgroundColor: activeIndex === index ? '#f9f9ff' : '#fff',
-    transition: 'background-color 0.3s ease',
-  });
-
-  // Indicator dot beside question
-  const indicatorStyle = (index) => ({
-    width: '16px',
-    height: '16px',
-    borderRadius: '50%',
-    backgroundColor: activeIndex === index ? '#4338ca' : '#c7d2fe',
-    marginRight: '16px',
-    flexShrink: 0,
-  });
-
-  // Text style for each question in the list
-  const questionStyle = (index) => ({
-    flex: 1,
-    fontWeight: activeIndex === index ? '500' : '400',
-    fontSize: '0.95rem',
-    color: activeIndex === index ? '#1f1f1f' : '#333',
-  });
-
-  // Right-side container for selected answer
-  const answerContainerStyle = {
-    flex: '1 1 320px',
-    minWidth: '280px',
-    padding: '24px',
-    backgroundColor: '#f9f9ff',
-    borderRadius: '12px',
-    fontFamily: 'Inter, sans-serif',
-  };
-
-  // Style for selected question title
-  const questionTitleStyle = {
-    fontWeight: '600',
-    fontSize: '1.1rem',
-    marginBottom: '10px',
-    color: '#1f1f1f',
-  };
-
-  // Style for answer text
-  const answerTextStyle = {
-    color: '#444',
-    lineHeight: '1.6',
-    fontSize: '0.95rem',
-  };
-
   return (
-    <section style={sectionStyle}>
-      {/* Section heading */}
-      <h2 style={titleStyle}>Frequently Asked Questions</h2>
+    <section className="px-6 py-20 max-w-7xl mx-auto font-sans text-xl">
+      <h2 className="text-6xl font-extrabold text-center mb-16 text-gray-800">
+        Frequently Asked Questions
+      </h2>
 
-      {/* Main container with list and answer section */}
-      <div style={containerStyle}>
+      <div className="flex flex-col lg:flex-row gap-10">
         {/* Left: Question list */}
-        <div style={listStyle}>
+        <div className="flex-1 bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              onClick={() => setActiveIndex(index)} // Update selected question
-              style={listItemStyle(index)}
+              onClick={() => setActiveIndex(index)}
+              className={`flex items-center px-8 py-6 cursor-pointer border-b border-gray-100 transition-all duration-200 ${
+                activeIndex === index
+                  ? 'bg-gradient-to-r from-[#bde6ea] via-[#e8c3d3] to-[#b29ab2]'
+                  : 'hover:bg-gray-50'
+              }`}
             >
-              <span style={indicatorStyle(index)}></span>
-              <span style={questionStyle(index)}>{faq.question}</span>
-              <span style={{ color: '#999', fontSize: '1rem' }}>›</span>
+              <div
+                className={`w-5 h-5 rounded-full mr-5 transition-all duration-300 ${
+                  activeIndex === index
+                    ? 'bg-[#e8c3d3]'
+                    : 'bg-[#bde6ea]'
+                }`}
+              />
+              <span
+                className={`flex-1 text-lg ${
+                  activeIndex === index
+                    ? 'font-semibold text-gray-800'
+                    : 'text-gray-700'
+                }`}
+              >
+                {faq.question}
+              </span>
+              <span className={`text-2xl ${
+                activeIndex === index ? 'text-gray-700' : 'text-gray-400'
+              }`}>
+                ›
+              </span>
             </div>
           ))}
         </div>
 
-        {/* Right: Answer display */}
-        <div style={answerContainerStyle}>
-          <h4 style={questionTitleStyle}>{faqs[activeIndex].question}</h4>
-          <p style={answerTextStyle}>{faqs[activeIndex].answer}</p>
+        {/* Right: Answer display with even softer gradient */}
+        <div className="flex-1 bg-gradient-to-br from-[#bde6ea] via-[#e8c3d3] to-[#b29ab2] border border-white/20 rounded-2xl p-10 shadow-lg backdrop-blur-md">
+          <h4 className="text-3xl font-bold text-gray-800 mb-6 drop-shadow-sm">
+            {faqs[activeIndex].question}
+          </h4>
+          <p className="text-gray-700 leading-relaxed text-lg">
+            {faqs[activeIndex].answer}
+          </p>
         </div>
       </div>
     </section>

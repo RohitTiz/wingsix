@@ -7,9 +7,7 @@ const AuthSection = () => {
   return (
     <div style={{ fontFamily: 'Roboto, sans-serif' }}>
       <Header userEmail={userEmail} setUserEmail={setUserEmail} />
-      <div style={{ padding: '20px', textAlign: 'center' }}>
-        
-      </div>
+      
     </div>
   );
 };

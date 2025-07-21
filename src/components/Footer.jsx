@@ -1,78 +1,92 @@
 import React from 'react';
 
 const Footer = () => {
-  // Main footer container style
-  const footerStyle = {
-    backgroundColor: '#0D1117',
-    color: '#ffffff',
-    padding: '60px 30px 20px',
-    fontFamily: 'Roboto, sans-serif',
-    fontSize: '14px',
-  };
-
-  // Grid container for top section with columns
-  const sectionStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-    gap: '40px',
-    marginBottom: '40px',
-  };
-
-  // Column title style
-  const columnTitleStyle = {
-    fontWeight: 'bold',
-    marginBottom: '12px',
-    fontSize: '15px',
-  };
-
-  // Link style inside columns
-  const linkStyle = {
-    marginBottom: '8px',
-    color: '#ccc',
-    textDecoration: 'none',
-    display: 'block',
-    fontSize: '13px',
-  };
-
-  // Bottom row: social links, terms, etc.
-  const bottomRowStyle = {
-    borderTop: '1px solid #333',
-    paddingTop: '20px',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    fontSize: '13px',
-    color: '#888',
-    rowGap: '20px',
-  };
-
-  // Left bottom: copyright, legal links
-  const leftBottomStyle = {
-    display: 'flex',
-    gap: '20px',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-  };
-
-  // Right bottom: social icons and store badges
-  const rightBottomStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-end',
-  };
-
-  // Style for app store icons
-  const storeIconStyle = {
-    height: '32px',
-  };
-
   return (
-    <footer style={footerStyle}>
+    <footer className="bg-[#0D1117] text-white pt-[60px] px-[30px] pb-[20px] font-roboto text-sm">
+      {/* Top section with navigational links */}
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-10 mb-10">
+        {/* Categories column */}
+        <div>
+          <div className="font-bold mb-3 text-[15px]">Categories</div>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">User Interface</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">User Experience</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Digital Media</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Lifestyle</a>
+        </div>
+
+        {/* Product column */}
+        <div>
+          <div className="font-bold mb-3 text-[15px]">Product</div>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Pricing</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Overview</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Browse</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">
+            Accessibility
+            <span className="text-[10px] bg-[#e0d9ff] text-[#5b3cc4] px-1.5 py-0.5 rounded ml-1">BETA</span>
+          </a>
+        </div>
+
+        {/* Solutions column */}
+        <div>
+          <div className="font-bold mb-3 text-[15px]">Solutions</div>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Brainstorming</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Ideation</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Wireframing</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Research</a>
+        </div>
+
+        {/* Resources column */}
+        <div>
+          <div className="font-bold mb-3 text-[15px]">Resources</div>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Help Center</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Blog</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Tutorials</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">FAQs</a>
+        </div>
+
+        {/* Support column */}
+        <div>
+          <div className="font-bold mb-3 text-[15px]">Support</div>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Contact Us</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Developers</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Documentation</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Integrations</a>
+        </div>
+
+        {/* Company column */}
+        <div>
+          <div className="font-bold mb-3 text-[15px]">Company</div>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">About</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Press</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Events</a>
+          <a href="#" className="block mb-2 text-[#ccc] no-underline text-[13px]">Request Demo →</a>
+        </div>
+      </div>
+
+      {/* Bottom row with legal and social links */}
+      <div className="border-t border-[#333] pt-5 flex flex-wrap justify-between items-center text-[13px] text-[#888] gap-y-5 footer-bottom">
+        {/* Left side: company info and legal links */}
+        <div className="flex gap-5 flex-wrap items-center footer-left">
+          <div>@ 2023 Company</div>
+          <a href="#" className="block text-[#ccc] no-underline text-[13px]">Terms of Service</a>
+          <a href="#" className="block text-[#ccc] no-underline text-[13px]">Privacy Policy</a>
+          <a href="#" className="block text-[#ccc] no-underline text-[13px]">Manage Cookies</a>
+        </div>
+
+        {/* Right side: social media and store badges */}
+        <div className="flex items-center gap-3 flex-wrap justify-end footer-right">
+          <img src="footer/youtube.png" alt="YouTube" className="h-[18px]" />
+          <img src="footer/facebook.png" alt="Facebook" className="h-[18px]" />
+          <img src="footer/twitter.png" alt="Twitter" className="h-[18px]" />
+          <img src="footer/instagram.png" alt="Instagram" className="h-[18px]" />
+          <img src="footer/linkedin.png" alt="LinkedIn" className="h-[18px]" />
+          <img src="footer/appstore.png" alt="App Store" className="h-8" />
+          <img src="footer/googleplay.png" alt="Google Play" className="h-8" />
+        </div>
+      </div>
+
       {/* Responsive styles for mobile */}
-      <style>{`
+      <style jsx>{`
         @media (max-width: 600px) {
           .footer-bottom {
             flex-direction: column;
@@ -86,95 +100,6 @@ const Footer = () => {
           }
         }
       `}</style>
-
-      {/* Top section with navigational links */}
-      <div style={sectionStyle}>
-        {/* Categories column */}
-        <div>
-          <div style={columnTitleStyle}>Categories</div>
-          <a href="#" style={linkStyle}>User Interface</a>
-          <a href="#" style={linkStyle}>User Experience</a>
-          <a href="#" style={linkStyle}>Digital Media</a>
-          <a href="#" style={linkStyle}>Lifestyle</a>
-        </div>
-
-        {/* Product column */}
-        <div>
-          <div style={columnTitleStyle}>Product</div>
-          <a href="#" style={linkStyle}>Pricing</a>
-          <a href="#" style={linkStyle}>Overview</a>
-          <a href="#" style={linkStyle}>Browse</a>
-          <a href="#" style={linkStyle}>
-            Accessibility
-            <span style={{
-              fontSize: '10px',
-              background: '#e0d9ff',
-              color: '#5b3cc4',
-              padding: '2px 6px',
-              borderRadius: '4px',
-              marginLeft: '4px'
-            }}>BETA</span>
-          </a>
-        </div>
-
-        {/* Solutions column */}
-        <div>
-          <div style={columnTitleStyle}>Solutions</div>
-          <a href="#" style={linkStyle}>Brainstorming</a>
-          <a href="#" style={linkStyle}>Ideation</a>
-          <a href="#" style={linkStyle}>Wireframing</a>
-          <a href="#" style={linkStyle}>Research</a>
-        </div>
-
-        {/* Resources column */}
-        <div>
-          <div style={columnTitleStyle}>Resources</div>
-          <a href="#" style={linkStyle}>Help Center</a>
-          <a href="#" style={linkStyle}>Blog</a>
-          <a href="#" style={linkStyle}>Tutorials</a>
-          <a href="#" style={linkStyle}>FAQs</a>
-        </div>
-
-        {/* Support column */}
-        <div>
-          <div style={columnTitleStyle}>Support</div>
-          <a href="#" style={linkStyle}>Contact Us</a>
-          <a href="#" style={linkStyle}>Developers</a>
-          <a href="#" style={linkStyle}>Documentation</a>
-          <a href="#" style={linkStyle}>Integrations</a>
-        </div>
-
-        {/* Company column */}
-        <div>
-          <div style={columnTitleStyle}>Company</div>
-          <a href="#" style={linkStyle}>About</a>
-          <a href="#" style={linkStyle}>Press</a>
-          <a href="#" style={linkStyle}>Events</a>
-          <a href="#" style={linkStyle}>Request Demo →</a>
-        </div>
-      </div>
-
-      {/* Bottom row with legal and social links */}
-      <div style={bottomRowStyle} className="footer-bottom">
-        {/* Left side: company info and legal links */}
-        <div style={leftBottomStyle} className="footer-left">
-          <div>@ 2023 Company</div>
-          <a href="#" style={linkStyle}>Terms of Service</a>
-          <a href="#" style={linkStyle}>Privacy Policy</a>
-          <a href="#" style={linkStyle}>Manage Cookies</a>
-        </div>
-
-        {/* Right side: social media and store badges */}
-        <div style={rightBottomStyle} className="footer-right">
-          <img src="footer/youtube.png" alt="YouTube" height="18" />
-          <img src="footer/facebook.png" alt="Facebook" height="18" />
-          <img src="footer/twitter.png" alt="Twitter" height="18" />
-          <img src="footer/instagram.png" alt="Instagram" height="18" />
-          <img src="footer/linkedin.png" alt="LinkedIn" height="18" />
-          <img src="footer/appstore.png" alt="App Store" style={storeIconStyle} />
-          <img src="footer/googleplay.png" alt="Google Play" style={storeIconStyle} />
-        </div>
-      </div>
     </footer>
   );
 };
