@@ -33,7 +33,7 @@ const FAQSection = () => {
 
   return (
     <section className="px-6 py-20 max-w-7xl mx-auto font-sans text-xl">
-      <h2 className="text-6xl font-extrabold text-center mb-16 text-gray-800">
+      <h2 className="text-6xl font-bold text-center mb-16 text-gray-800">
         Frequently Asked Questions
       </h2>
 

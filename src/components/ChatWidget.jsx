@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaComment, FaTimes, FaPaperPlane } from 'react-icons/fa';
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,173 +9,81 @@ const ChatWidget = () => {
 
   const handleSendMessage = () => {
     if (newMessage.trim() === '') return;
-    
+
     setMessages([...messages, { text: newMessage, sender: 'user' }]);
     setNewMessage('');
-    
+
     setTimeout(() => {
-      setMessages(prev => [...prev, { 
-        text: 'Thanks for your message! Our team will get back to you soon.', 
-        sender: 'bot' 
+      setMessages(prev => [...prev, {
+        text: 'Thanks for your message! Our team will get back to you soon.',
+        sender: 'bot'
       }]);
     }, 1000);
   };
 
   return (
     <>
-      {/* Chat bubble button */}
-      <div 
+      {/* Chat Toggle Button */}
+      <div
         onClick={() => setIsOpen(!isOpen)}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          width: '52px',
-          height: '52px',
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg, #4a6cf7 0%, #6a8cff 100%)',
-          color: 'white',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          boxShadow: '0 4px 12px rgba(74, 108, 247, 0.3)',
-          zIndex: 1000,
-          transition: 'all 0.2s ease',
-          ':hover': {
-            transform: 'scale(1.1)',
-            boxShadow: '0 6px 16px rgba(74, 108, 247, 0.4)'
-          }
-        }}
+        className="fixed bottom-5 right-5 w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 text-white flex items-center justify-center cursor-pointer shadow-lg transition-transform hover:scale-110 z-50"
       >
-        {isOpen ? <FaTimes size={18} /> : <FaComment size={18} />}
+        {isOpen ? (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v10l-4-4H7a2 2 0 01-2-2V6a2 2 0 012-2h6" />
+          </svg>
+        )}
       </div>
 
-      {/* Chat window */}
+      {/* Chat Window */}
       {isOpen && (
-        <div style={{
-          position: 'fixed',
-          bottom: '82px',
-          right: '20px',
-          width: '300px',
-          maxWidth: '90vw',
-          height: '380px',
-          background: 'white',
-          borderRadius: '14px',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-          display: 'flex',
-          flexDirection: 'column',
-          zIndex: 1000,
-          overflow: 'hidden',
-          fontFamily: '"Robusta", sans-serif',
-        }}>
-          {/* Gradient header */}
-          <div style={{
-            padding: '16px',
-            background: 'linear-gradient(135deg, #4a6cf7 0%, #6a8cff 100%)',
-            color: 'white',
-            fontWeight: '600',
-            fontSize: '16px',
-            display: 'flex',
-            alignItems: 'center',
-            letterSpacing: '0.3px'
-          }}>
-            <FaComment style={{ marginRight: '10px', fontSize: '16px' }} />
+        <div className="fixed bottom-24 right-5 w-80 max-w-[90vw] h-[380px] bg-white rounded-xl shadow-xl flex flex-col z-50 overflow-hidden">
+          <div className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold text-sm flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v10l-4-4H7a2 2 0 01-2-2V6a2 2 0 012-2h6" />
+            </svg>
             Live Chat
           </div>
 
-          {/* Messages container */}
-          <div style={{
-            flex: 1,
-            padding: '16px',
-            overflowY: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
-            background: 'linear-gradient(to bottom, #f9faff 0%, #ffffff 100%)'
-          }}>
+          <div className="flex-1 p-4 overflow-y-auto bg-gradient-to-b from-gray-50 to-white space-y-3">
             {messages.map((message, index) => (
-              <div 
+              <div
                 key={index}
-                style={{
-                  alignSelf: message.sender === 'user' ? 'flex-end' : 'flex-start',
-                  background: message.sender === 'user' 
-                    ? 'linear-gradient(135deg, #4a6cf7 0%, #6a8cff 100%)' 
-                    : '#ffffff',
-                  color: message.sender === 'user' ? 'white' : '#1b3a57',
-                  padding: '10px 14px',
-                  borderRadius: message.sender === 'user' 
-                    ? '14px 14px 0 14px' 
-                    : '14px 14px 14px 0',
-                  maxWidth: '85%',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
-                  fontSize: '14px',
-                  lineHeight: '1.4',
-                  fontFamily: '"Robusta", sans-serif'
-                }}
+                className={`max-w-[85%] text-sm px-4 py-2 rounded-lg shadow-sm ${
+                  message.sender === 'user'
+                    ? 'bg-gradient-to-br from-blue-600 to-blue-400 text-white self-end rounded-br-none'
+                    : 'bg-white text-gray-800 self-start rounded-bl-none'
+                }`}
               >
                 {message.text}
               </div>
             ))}
           </div>
 
-          {/* Input area */}
-          <div style={{
-            padding: '12px',
-            borderTop: '1px solid #e8ecf7',
-            display: 'flex',
-            gap: '10px',
-            background: 'white'
-          }}>
+          <div className="p-3 border-t border-gray-200 bg-white flex items-center gap-2">
             <input
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+              onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
               placeholder="Type your message..."
-              style={{
-                flex: 1,
-                padding: '10px 14px',
-                border: '1px solid #e8ecf7',
-                borderRadius: '10px',
-                outline: 'none',
-                fontSize: '14px',
-                fontFamily: '"Robusta", sans-serif',
-                transition: 'border 0.2s ease',
-                ':focus': {
-                  borderColor: '#4a6cf7'
-                }
-              }}
+              className="flex-1 px-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <button
               onClick={handleSendMessage}
-              style={{
-                background: 'linear-gradient(135deg, #4a6cf7 0%, #6a8cff 100%)',
-                color: 'white',
-                border: 'none',
-                borderRadius: '10px',
-                width: '40px',
-                height: '40px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'all 0.2s ease',
-                ':hover': {
-                  opacity: '0.9'
-                }
-              }}
+              className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg text-white flex items-center justify-center hover:opacity-90"
             >
-              <FaPaperPlane size={14} />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
             </button>
           </div>
         </div>
       )}
-
-      {/* Robusta font import */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Robusta:wght@400;500;600&display=swap');
-      `}</style>
     </>
   );
 };
