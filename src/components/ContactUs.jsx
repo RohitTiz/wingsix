@@ -1,141 +1,91 @@
 import React from 'react';
-import { FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const ContactUs = () => {
   return (
-    <section id="contact" className="relative py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-        <div className="absolute top-20 left-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-60 h-60 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl"></div>
+    <section
+      id="contact"
+      className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 px-4 relative overflow-hidden"
+    >
+      {/* Decorative background blur shapes */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-purple-400 rounded-full mix-blend-multiply filter blur-2xl"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Get In Touch
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Have questions or want to collaborate? We'd love to hear from you.
-          </p>
+      <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left side image */}
+        <div className="relative h-[480px] w-full overflow-hidden rounded-3xl shadow-2xl hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1680783954745-3249be59e527?w=800&auto=format&fit=crop&q=80"
+            alt="Contact Visual"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <h2 className="text-white text-3xl font-semibold text-center px-6">
+              Let's Collaborate & Create Something Great!
+            </h2>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left column - Contact info */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 hover:shadow-2xl transition-shadow duration-300">
-            <div className="mb-10">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg text-blue-600">
-                    <FaMapMarkerAlt className="text-xl" />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-800">Head Office</h4>
-                    <p className="text-gray-600">JUUN.1 SAMSUNG CAT CORPORATION</p>
-                    <p className="text-gray-600">Republic of Korea</p>
-                  </div>
-                </div>
+        {/* Right side: Form */}
+        <div className="bg-white/80 backdrop-blur-xl p-8 sm:p-10 rounded-3xl shadow-2xl w-full max-w-xl mx-auto border border-white/30">
+          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Get in Touch
+          </h3>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg text-blue-600">
-                    <FaPhoneAlt className="text-xl" />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-800">Phone</h4>
-                    <p className="text-gray-600">+82 2 1234 5678</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg text-blue-600">
-                    <FaEnvelope className="text-xl" />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-800">Email</h4>
-                    <p className="text-gray-600">contact@samsungcat.com</p>
-                  </div>
-                </div>
-              </div>
+          <form className="space-y-6">
+            {/* Input Group */}
+            <div className="relative">
+              <input
+                type="text"
+                required
+                className="peer w-full px-4 pt-6 pb-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
+                Your Name
+              </label>
             </div>
 
-            {/* Social media */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300">
-                  <FaTwitter className="text-xl" />
-                </a>
-                <a href="#" className="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300">
-                  <FaInstagram className="text-xl" />
-                </a>
-                <a href="#" className="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300">
-                  <FaLinkedin className="text-xl" />
-                </a>
-                <a href="#" className="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300">
-                  <FaYoutube className="text-xl" />
-                </a>
-              </div>
+            <div className="relative">
+              <input
+                type="email"
+                required
+                className="peer w-full px-4 pt-6 pb-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
+                Email Address
+              </label>
             </div>
-          </div>
 
-          {/* Right column - Contact form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 hover:shadow-2xl transition-shadow duration-300">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-            
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300"
-                    placeholder="Your email"
-                  />
-                </div>
-              </div>
+            <div className="relative">
+              <input
+                type="tel"
+                required
+                className="peer w-full px-4 pt-6 pb-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
+                Phone Number
+              </label>
+            </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300"
-                  placeholder="Your phone number"
-                />
-              </div>
+            <div className="relative">
+              <textarea
+                rows="4"
+                required
+                className="peer w-full px-4 pt-6 pb-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              ></textarea>
+              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
+                Your Message
+              </label>
+            </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea
-                  id="message"
-                  rows="5"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300"
-                  placeholder="Your message..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+            <button
+              type="submit"
+              className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </section>
