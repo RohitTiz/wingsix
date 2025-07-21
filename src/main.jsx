@@ -8,6 +8,7 @@ import './App.css'
 //css
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <BrowserRouter></BrowserRouter>
     <App />
   </React.StrictMode>
 );
