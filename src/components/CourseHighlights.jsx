@@ -1,5 +1,7 @@
 import React from 'react';
 
+///earn certificate and best cources section which is just after the partners logo
+
 const cards = [
   {
     title: 'Earn a Certificate',

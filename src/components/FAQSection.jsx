@@ -32,36 +32,37 @@ const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <section className="px-6 py-20 max-w-7xl mx-auto font-sans text-xl">
-      <h2 className="text-6xl font-bold text-center mb-16 text-gray-800">
+    <section className="px-6 py-20 max-w-7xl mx-auto font-sans text-xl bg-gray-50">
+      {/* Heading filled completely with black */}
+      <h2 className="text-5xl text-center mb-16 text-black font-normal">
         Frequently Asked Questions
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Left: Question list */}
-        <div className="flex-1 bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden">
+        <div className="flex-1 bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           {faqs.map((faq, index) => (
             <div
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`flex items-center px-8 py-6 cursor-pointer border-b border-gray-100 transition-all duration-200 ${
+              className={`flex items-center px-8 py-5 cursor-pointer border-b border-gray-100 transition-colors duration-200 ${
                 activeIndex === index
-                  ? 'bg-gradient-to-r from-[#bde6ea] via-[#e8c3d3] to-[#b29ab2]'
+                  ? 'bg-gray-100'
                   : 'hover:bg-gray-50'
               }`}
             >
               <div
-                className={`w-5 h-5 rounded-full mr-5 transition-all duration-300 ${
+                className={`w-4 h-4 rounded-full mr-5 transition-colors duration-300 ${
                   activeIndex === index
-                    ? 'bg-[#e8c3d3]'
-                    : 'bg-[#bde6ea]'
+                    ? 'bg-gray-600'
+                    : 'bg-gray-300'
                 }`}
               />
               <span
-                className={`flex-1 text-lg ${
+                className={`flex-1 text-base ${
                   activeIndex === index
-                    ? 'font-semibold text-gray-800'
-                    : 'text-gray-700'
+                    ? 'text-gray-800'
+                    : 'text-gray-600'
                 }`}
               >
                 {faq.question}
@@ -75,12 +76,12 @@ const FAQSection = () => {
           ))}
         </div>
 
-        {/* Right: Answer display with even softer gradient */}
-        <div className="flex-1 bg-gradient-to-br from-[#bde6ea] via-[#e8c3d3] to-[#b29ab2] border border-white/20 rounded-2xl p-10 shadow-lg backdrop-blur-md">
-          <h4 className="text-3xl font-bold text-gray-800 mb-6 drop-shadow-sm">
+        {/* Right: Answer display */}
+        <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-10 shadow-sm">
+          <h4 className="text-2xl text-gray-800 mb-4 font-normal">
             {faqs[activeIndex].question}
           </h4>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-700 leading-relaxed text-base font-normal">
             {faqs[activeIndex].answer}
           </p>
         </div>

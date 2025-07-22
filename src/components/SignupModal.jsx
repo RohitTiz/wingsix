@@ -401,9 +401,9 @@ const SignupModal = ({ onClose, onSignUp }) => {
                   />
                 </div>
               )}
-
+                {/* PASSOWRDD */}
               {activeTab === 'login' && (
-                <label className="block text-left text-xs font-medium text-gray-700 mb-1">Password</label>
+                <label className="block text-left text-xs font-medium text-gray-700 mb-1"></label>
               )}
 
               <input

@@ -14,7 +14,7 @@ import WhyJoinSection from '../components/WhyJoinSection.jsx';
 import FAQSection from '../components/FAQSection.jsx';
 import ContactUs from '../components/ContactUs.jsx';
 import ChatWidget from '../components/ChatWidget.jsx';
-import CursorTrail from '../components/CursorTrail.jsx';
+// import CursorTrail from '../components/CursorTrail.jsx';
 import Header from './Header.jsx';
 import AuthSection from './AuthSection';
 import Footer from './Footer.jsx';
@@ -23,7 +23,7 @@ const HomePagee = () => {
   return (
     <>
     <AuthSection />
-      <CursorTrail />
+      {/* <CursorTrail /> */}
       <HeroSection />
       <FeatureSection />
       <CourseSection />
