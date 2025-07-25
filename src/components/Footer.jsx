@@ -86,7 +86,13 @@ const Footer = () => {
       </div>
 
       {/* Responsive styles for mobile */}
-      <style jsx>{`
+      {/* 
+        FIXED THE ERROR HERE:
+        Changed from: <style jsx>{`...`}</style>
+        To: <style jsx="true">{`...`}</style>
+        This converts the boolean jsx attribute to a string value to prevent the React warning
+      */}
+      <style jsx="true">{`
         @media (max-width: 600px) {
           .footer-bottom {
             flex-direction: column;
