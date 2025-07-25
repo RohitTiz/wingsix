@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Lock, AlertCircle, CheckCircle, ArrowLeft } from 'lucide-react';
 
 const Checkout = () => {
   // Mock course data for demonstration
@@ -200,7 +199,7 @@ const Checkout = () => {
                 />
                 {errors.upiId && (
                   <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                    <AlertCircle size={14} /> {errors.upiId}
+                    <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.upiId}
                   </p>
                 )}
               </div>
@@ -241,7 +240,7 @@ const Checkout = () => {
                 />
                 {errors.cardNumber && (
                   <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                    <AlertCircle size={14} /> {errors.cardNumber}
+                    <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.cardNumber}
                   </p>
                 )}
               </div>
@@ -265,7 +264,7 @@ const Checkout = () => {
                   />
                   {errors.expiryDate && (
                     <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                      <AlertCircle size={14} /> {errors.expiryDate}
+                      <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.expiryDate}
                     </p>
                   )}
                 </div>
@@ -282,7 +281,7 @@ const Checkout = () => {
                   />
                   {errors.cvv && (
                     <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                      <AlertCircle size={14} /> {errors.cvv}
+                      <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.cvv}
                     </p>
                   )}
                 </div>
@@ -299,7 +298,7 @@ const Checkout = () => {
                 />
                 {errors.cardholderName && (
                   <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                    <AlertCircle size={14} /> {errors.cardholderName}
+                    <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.cardholderName}
                   </p>
                 )}
               </div>
@@ -335,7 +334,7 @@ const Checkout = () => {
               </select>
               {errors.netBankingBank && (
                 <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                  <AlertCircle size={14} /> {errors.netBankingBank}
+                  <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.netBankingBank}
                 </p>
               )}
             </div>
@@ -370,7 +369,7 @@ const Checkout = () => {
               </select>
               {errors.wallet && (
                 <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
-                  <AlertCircle size={14} /> {errors.wallet}
+                  <img src="https://img.icons8.com/ios-filled/14/FF0000/error--v1.png" alt="error" /> {errors.wallet}
                 </p>
               )}
             </div>
@@ -388,7 +387,7 @@ const Checkout = () => {
       <div className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <button className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
-            <ArrowLeft size={20} />
+            <img src="https://img.icons8.com/ios-filled/20/000000/long-arrow-left.png" alt="back" />
             <span>Back to Course</span>
           </button>
         </div>
@@ -439,7 +438,7 @@ const Checkout = () => {
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
               Payment Method 
-              <Lock size={20} className="text-green-600" />
+              <img src="https://img.icons8.com/ios-filled/20/4CAF50/lock--v1.png" alt="secure" />
             </h2>
 
             {renderPaymentForm()}
@@ -528,7 +527,7 @@ const Checkout = () => {
               disabled={isProcessing}
               className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-blue-400 disabled:to-blue-500 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-105 disabled:hover:scale-100 shadow-lg"
             >
-              <Lock size={20} /> 
+              <img src="https://img.icons8.com/ios-filled/20/FFFFFF/lock--v1.png" alt="secure" /> 
               {isProcessing ? (
                 <>
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -542,7 +541,7 @@ const Checkout = () => {
 
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl shadow-lg p-6 text-center border border-green-200">
             <h3 className="font-bold mb-2 text-green-800 flex items-center justify-center gap-2 text-lg">
-              <CheckCircle size={24} className="text-green-600" />
+              <img src="https://img.icons8.com/ios-filled/24/4CAF50/checkmark--v1.png" alt="guarantee" />
               30-Day Money-Back Guarantee
             </h3>
             <p className="text-sm text-gray-700">
@@ -552,7 +551,7 @@ const Checkout = () => {
 
           <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl shadow-lg p-6 text-center border border-orange-200">
             <p className="text-sm text-gray-700">
-              🔥 <span className="font-bold text-orange-600">8 people</span> in your country have enrolled in this course in the last 24 hours!
+              <img src="https://img.icons8.com/ios-filled/16/FF6B00/fire-element--v1.png" alt="hot" /> <span className="font-bold text-orange-600">8 people</span> in your country have enrolled in this course in the last 24 hours!
             </p>
           </div>
         </div>
