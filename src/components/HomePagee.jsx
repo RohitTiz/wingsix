@@ -10,7 +10,7 @@ import CourseSection from '../components/CourseSection.jsx';
 import MetricsSection from '../components/MetricsSection.jsx';
 import PartnerLogos from '../components/PartnerLogos.jsx';
 // import SignupCTA from '../components/SignupCTA.jsx';
-import CourseHighlights from './CourseHighlights.jsx';
+import CourseHighlights from './NineSec.jsx';
 import WhyJoinSection from '../components/WhyJoinSection.jsx';
 import FAQSection from '../components/FAQSection.jsx';
 import ContactUs from '../components/ContactUs.jsx';

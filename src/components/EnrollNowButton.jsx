@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const EnrollNowButton = () => {
+const EnrollNowButton = ({courseId}) => {
   const navigate = useNavigate();
-
   const handleClick = () => {
-    navigate('/enroll-now');
+    navigate(`/courses/${courseId}`);
   };
 
   return (

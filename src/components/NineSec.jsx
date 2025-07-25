@@ -23,7 +23,7 @@ const cards = [
   },
 ];
 
-const CourseShowcase = () => {
+const NineSec = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
       {cards.map((card, idx) => (
@@ -62,4 +62,4 @@ const CourseShowcase = () => {
   );
 };
 
-export default CourseShowcase;
+export default NineSec;

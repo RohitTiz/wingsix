@@ -6,20 +6,19 @@ const CourseCard = ({ course }) => {
   const navigate = useNavigate();
 
   // Handle double click navigation
-  const handleDoubleClick = () => {
-    navigate('/enroll-now');
+  const handleCourseClick = () => {
+    navigate(`/courses/${course.id}`);
   };
 
-  // Handle image click navigation
   const handleImageClick = (e) => {
-    e.stopPropagation(); // Prevent triggering double click
-    navigate('/enroll-now');
+    e.stopPropagation();
+    navigate(`/courses/${course.id}`);
   };
 
   return (
     <div 
       className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col h-full"
-      onDoubleClick={handleDoubleClick}
+      onDoubleClick={handleCourseClick}
     >
       {/* Image Section - now clickable */}
       <div 
@@ -71,7 +70,7 @@ const CourseCard = ({ course }) => {
           <span className="text-2xl font-bold text-blue-600">
             {course.price === 0 ? 'Free' : `₹${course.price}`}
           </span>
-          <EnrollNowButton />
+          <EnrollNowButton courseId={course.id} />
         </div>
       </div>
     </div>

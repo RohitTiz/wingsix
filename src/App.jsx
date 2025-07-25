@@ -12,6 +12,8 @@ import Coursespage from "./pages/Coursespage"
 import SpecializationsPage from"./pages/SpecializationsPage"
 import CourseCard from './components/CourseCard';
 import EnrollNow from './components/EnrollNow';
+import CourseDetails from './components/CourseDetails';
+import Checkout from './components/Checkout';
 
 const App = () => {
   return (
@@ -25,6 +27,9 @@ const App = () => {
           <Route path="/Specializations" element={<SpecializationsPage />}/>
           <Route path="/" element={<CourseCard />} />
           <Route path="/enroll-now" element={<EnrollNow />} />
+        <Route path="/courses/:id" element={<CourseDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
+        
 
         </Routes>
       </Router>
