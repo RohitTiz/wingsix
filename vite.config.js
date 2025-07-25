@@ -9,6 +9,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['react-router-dom'],
+    
     },
+    base: './', // This ensures assets are loaded correctly in production
   },
 })
